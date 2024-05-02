@@ -1,59 +1,68 @@
-package com.javacore.java;
+package com.demo;
 
-abstract class Shape {
-     abstract double calculateArea();
-     abstract double calculatePerimeter();
+class Shapee
+{
+	public void draw()
+	{
+		System.out.println("Draw Shape");
+	}
+	
+	public double calculateArea()
+	{
+		return 0.0;
+	}
 }
 
-class Circle extends Shape {
-    private double radius;
-
-     Circle(double radius) {
-        this.radius = radius;
-    }
-
-    @Override
-     double calculateArea() {
-        return Math.PI * radius * radius;
-    }
-
-    @Override
-     double calculatePerimeter() {
-        return 2 * Math.PI * radius;
-    }
+class Circlee extends Shapee
+{
+	private double r;
+	public Circlee(double r)
+	{
+		this.r= r;
+	}
+	
+	public void draw()
+	{
+		System.out.println("Draw Circle");
+	}
+	
+	public double calculateArea()
+	{
+		return 3.14 * r *r;
+	}
 }
 
-class Triangle extends Shape {
-    private double base;
-    private double height;
-
-     Triangle(double base, double height) {
-        this.base = base;
-        this.height = height;
-    }
-
-    @Override
-     double calculateArea() {
-        return 0.5 * base * height;
-    }
-
-    @Override
-     double calculatePerimeter() {
-       
-        double hypo =base+height;
-        return base + height + hypo;
-    }
+class Cylinder extends Shapee
+{
+	private double ht,r;
+	public Cylinder(double r, double ht)
+	{
+		this.r=r;
+		this.ht= ht;
+	}
+	
+	public void draw()
+	{
+		System.out.println("Draw Cylinder");
+	}
+	
+	public double calculateArea()
+	{
+		return (2*3.14*r*ht)+(2*3.14*r*r);
+	}
 }
+public class Shape1
+{
 
-public class Shape1 {
-    public static void main(String[] args) {
-        Circle circle = new Circle(5);
-        Triangle triangle = new Triangle(3, 4);
+	public static void main(String[] args)
+	{
+		Circlee c= new Circlee(5);
+		c.draw();
+		System.out.println("Area of Circle:"+c.calculateArea());
+		
+		Cylinder cy = new Cylinder(3,7);
+		cy.draw();
+		System.out.println("Area of cylinder:"+cy.calculateArea());
+	}
 
-        System.out.println("Circle area: " + circle.calculateArea());
-        System.out.println("Circle perimeter: " + circle.calculatePerimeter());
-
-        System.out.println("Triangle area: " + triangle.calculateArea());
-        System.out.println("Triangle perimeter: " + triangle.calculatePerimeter());
-    }
 }
