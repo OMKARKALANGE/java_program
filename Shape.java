@@ -1,98 +1,48 @@
-package com.demo;
+//Write a Java program to create a class called Shape with a method called getArea(). Create a 
+	//subclass called Rectangle that overrides the getArea() method to calculate the area of a rectangle.
 
 
-class Shape {
-	public void draw()
-	{
-		System.out.println("draw shape");
-	}
-	public double calculateArea()
-	{
-		return 0;
-	}
-}
-class Circle
-{
-	double radius;
+
+package javademo;
+import java.util.Scanner;
+
+public class Shape {
 	
-	public Circle(double radius)
-	{
-		this.radius= radius;
-	}
-	public void draw() 
-	{
-		System.out.println("Draw the circle..");
-	}
-	public double calculateArea()
-	{
-		return Math.PI * radius *radius;
-	}
-}
-class Square
-{ 
-	double side; 
-	public Square(double side)
-	{
-		this.side= side;
-	}
-	void draw() 
-	{
-		System.out.println("Draw the square.. ");
-	}
-	public double calculateArea()
-	{
-		return side *side;
-	}
-}
-class Triangle extends Shape
-{
-	double base,height;
 	
-	public Triangle(double base, double height)
-	{
-		this.base= base;
-		this.height= height;
-	}
-	
-	public void draw() 
-	{
-		System.out.println("Draw the square.. ");
-	}
-	public double calculateArea()
-	{
-		return 0.5 * base * height;
-	}
-	
-	public static void main(String[] args) {
-		
-		Shape sh=new Shape();
-		sh.draw();
-		sh.calculateArea();
-     //   System.out.println("Area: " + sh.calculateArea());
-
-		
-		
-		Circle cr=new Circle(5);
-		cr.draw();
-		cr.calculateArea();
-        System.out.println("Area: " + cr.calculateArea());
 
 
-		Square sq =new Square(4);
-		sq.draw();
-		sq.calculateArea();
-        System.out.println("Area: " + sq.calculateArea());
-
-		
-		Triangle tri = new Triangle(4,5);
-		tri.draw();
-		tri.calculateArea();
-        System.out.println("Area: " + tri.calculateArea());
-
+		int area;
+		public int getArea(int length,int width){
+			return area;
+			
 		
 		
 	}
-	
+	class Rectangle1 extends Shape{
+		public int getArea(int length,int width) {
+			area=length*width;
+			return area;
+			
+		}
+		
+	}
+
+	public class Lab3_Q2 {
+
+		public static void main(String[] args) {
+			// TODO Auto-generated method stub
+			
+			Scanner sc=new Scanner(System.in);
+			System.out.println("Enter length and width");
+			int length=sc.nextInt();
+			int width=sc.nextInt();
+			
+			Rectangle1 r = new Rectangle1();
+			
+			System.out.println("Area of Rectangle is " +r.getArea(length, width));
+
+		}
+
+	}
 
 }
-

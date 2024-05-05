@@ -1,26 +1,23 @@
-package com.demo;
+package com.ExceptionDemo;
 
-public class ThrowsDemo 
-{
+public class ThrowsDemo {
 	void validate(int age)
 	{
 		if(age<18)
-		throw new ArithmeticException("Age is not valid");
+			throw new ArithmeticException("age is not valid");
 		else
-			System.out.println("Eligible for voting");
+			System.out.println("eligible");
+		
 	}
-	public static void main(String[] args) throws ArithmeticException
-	{
-		ThrowsDemo td = new ThrowsDemo();
+
+	public static void main(String[] args) {
+		ThrowsDemo td=new ThrowsDemo();
 		try {
-			td.validate(15);
-		}
-		catch(ArithmeticException ae)
+			td.validate(13);
+		}catch(ArithmeticException ae)
 		{
-			System.out.println("Welcome for voting");
-		}	
-		System.out.println("Hello");
+			System.out.println("age is less ");
+		}
+		System.out.println("main bhi execute ho raha hoon");
 	}
-
 }
-

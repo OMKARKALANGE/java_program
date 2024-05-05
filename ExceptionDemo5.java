@@ -1,37 +1,27 @@
-package com.demo;
-
-//Employee e = new Employee() // early binding
-// Employee e;  //reference   // late binding
-// e=null;
+package com.ExceptionDemo;
 
 public class ExceptionDemo5 {
-	public static void main(String[] args) {
-		int result, a=10, b=0;
-		try
-		{
-			result=a/b;
-			System.out.println(result);
-		}
-			catch(NullPointerException ae)
-			{
-				System.out.println("no val in variable");
-			}
-			catch(ArithmeticException ae)
-			{
-				System.out.println("divisible by zero");
-			}
-			catch(ArrayIndexOutOfBoundsException ae)
-			{
-				System.out.println("out of range");
-		}
-		catch(Exception e)
-		{
-			System.out.println("Exception handled");
-		}
-		finally {
-		System.out.println("close all connection");
+   public static void main(String[] args) {
+	int result, a=0,b=0;
+	try
+	{
+		result =a/b;
+		System.out.println(result);
 		
-		}
-		System.out.println("Heyy..");
+	}catch(ArithmeticException ae)
+	{
+		System.out.println("division by 0 is not possible");
+	}catch (NullPointerException e) {
+		System.out.println("no values in vAriable");
 	}
+	catch (ArrayIndexOutOfBoundsException aie) {
+		System.out.println("");
+	}
+	finally
+	{
+		System.out.println("close all the connections");
+	}
+	System.out.println("bacha hua code execute hoga");
+}
+
 }

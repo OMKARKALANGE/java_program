@@ -1,57 +1,19 @@
-package com.javacore.java;
+//Write a Java program to create a class called Vehicle with a method 
+//called drive(). Create a subclass called Car that overrides the drive() method to print
+//"Repairing a car".
+package javademo;
 
-abstract class Vehicle {
-	abstract void startEngine();
-	abstract void stopEngine();
-}
-
-	class Car extends Vehicle
-	{
-
-		@Override
-		void startEngine() {
-			System.out.println("Car Engine Starts..");
-			
-		}
-
-		@Override
-		void stopEngine() {
-			System.out.println("Car Engine Stops..");
-			
-		}
-		
-		
-	}
-	class Motorcycle extends Vehicle{
-		
-	@Override
-	void startEngine() {
-		System.out.println("Motorcycle Engine Starts..");
-		
-	}
-
-
-	@Override
-	void stopEngine() {
-		System.out.println("Motorcycle Engine Stops..");
-
-		
-	}
-
-	public static void main(String[] args) {
-		
-		Car c = new Car();
-		Motorcycle mc = new Motorcycle();
-		
-		c.startEngine();
-		c.stopEngine();
-		mc.startEngine();
-		mc.stopEngine();
-		
-		
-		}
-
-	}
-
+public class Vehicle {
 	
+	public void drive()
+	{
+		System.out.println("Drive method in vehical class");
+	}
+	public void main (String args[])
+	{
+		
+		Vehicle vc= new Vehicle();
+		vc.drive();
+	}
 
+}
